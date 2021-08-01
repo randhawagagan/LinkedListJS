@@ -20,6 +20,10 @@ class LinkedList{
     return this;
   }
 
+  prepend(value){
+    const newNode = 
+  }
+
 }
 
 const myLinkedList = new LinkedList(10);
