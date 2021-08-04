@@ -64,21 +64,11 @@ class LinkedList{
   }
 
   remove(index){
-    if(index === 0){
-      const holdingPointer = this.head.next;
-      delete this.head;
-      this.head = holdingPointer;
-      this.length--;
-    }
-    //  if(index >= this.length){
-    //   const holdingPointer = this.tail.next;
-    //   delete this.head;
-    //   this.head = holdingPointer;
-    //   this.length--;
-    // }
 
-    const leader = traverseToIndex(index-1);
-    const unWantedNode = leader.n
+    const leader = this.traverseToIndex(index-1);
+    const unWantedNode = leader.next;
+    leader.next = unWantedNode.next;
+    this.length--;
     return this.printList()
   }
 
@@ -106,7 +96,8 @@ myLinkedList.prepend(1);
 myLinkedList.insert(2, 99);
 myLinkedList.insert(20, 88);
 
-myLinkedList.remove(0);
+myLinkedList.remove(2);
+myLinkedList.remove(2);
 
 
 
