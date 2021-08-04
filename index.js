@@ -64,7 +64,6 @@ class LinkedList{
   }
 
   remove(index){
-
     const leader = this.traverseToIndex(index-1);
     const unWantedNode = leader.next;
     leader.next = unWantedNode.next;
